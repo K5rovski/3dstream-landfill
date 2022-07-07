@@ -169,8 +169,8 @@ class BasicWorldDemo {
     // this.rigidBodies_.push({mesh: box, rigidBody: rbBox});
 
     let isSphere = true;
-    for (let x = -4; x < 4; ++x) {
-      for (let y = -4; y < 4; ++y) {
+    for (let x = -30; x < 30; ++x) {
+      for (let y = -30; y < 30; ++y) {
         if (isSphere) {
           const box = new THREE.Mesh(
             new THREE.SphereGeometry(4),
@@ -266,14 +266,14 @@ class BasicWorldDemo {
     const timeElapsedS = timeElapsed * 0.001;
 
     this.countdown_ -= timeElapsedS;
-    if (this.countdown_ < 0 && this.count_ < 10) {
+    if (this.countdown_ < 0 && this.count_ < 800) {
       this.countdown_ = 0.25;
       this.count_ += 1;
       this.spawn_();
     }
 
     this.physicsWorld_.stepSimulation(timeElapsedS, 10);
-
+console.log(this.rigidBodies_.length);
     for (let i = 0; i < this.rigidBodies_.length; ++i) {
       this.rigidBodies_[i].rigidBody.motionState_.getWorldTransform(this.tmpTransform_);
       const pos = this.tmpTransform_.getOrigin();
