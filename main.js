@@ -97,7 +97,7 @@ class BasicWorldDemo {
     const near = 1.0;
     const far = 1000.0;
     this.camera_ = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    this.camera_.position.set(-25, 34, -69);
+    this.camera_.position.set(-166.78869589385005, 113.40166970055594, -460.33680066702607);
 
     this.scene_ = new THREE.Scene();
 
@@ -274,7 +274,9 @@ controls.addEventListener( "change", event => {
 
   
     let rb;
-    let obj_array = [box(0),box(20 ),sphere(-15),sphere(-30)];
+    let obj_array = [box(0),box(20 ),sphere(-15),sphere(-30),box(0),box(20 ),
+    sphere(-15),sphere(-30),box(0),box(20 ),sphere(-15),sphere(-30),
+    box(0),box(20 ),sphere(-15),sphere(-30),box(0),box(20 ),sphere(-15),sphere(-30)];
 
 
     obj_array.sort( () => .5 - Math.random() );
